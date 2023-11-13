@@ -4,9 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
-//import java.time.Duration;
 
 public class BasePage {
 
@@ -59,9 +56,6 @@ public class BasePage {
         return this.elementFind(locator).getText();
     }
 
-    /*public void clickLogin() throws InterruptedException {
-        this.click(loginButtom);
-    }*/
 
     public void clickMiCuenta() throws InterruptedException {
         Thread.sleep(1000);
@@ -76,11 +70,5 @@ public class BasePage {
     protected void sendKeys(By inputResultadosBuscador, String producto) {
     }
 
-
-
-    /*public String obtenerUsuario() throws InterruptedException {
-        System.out.println("EL USUARIO ES: " + this.getText(nombreUsuario));
-        return this.getText(nombreUsuario);
-    }*/
 
 }
