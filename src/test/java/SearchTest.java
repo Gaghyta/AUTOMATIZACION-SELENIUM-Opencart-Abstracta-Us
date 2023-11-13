@@ -21,14 +21,14 @@ public class SearchTest {
     }
 
     @BeforeEach
-    public void inicio() {
+    public void inicio() throws InterruptedException {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         SearchPage searchPage = new SearchPage(driver, wait);
         driver.manage().deleteAllCookies();
         driver.navigate().refresh();
         searchPage.setUp();
-        searchPage.getUrl("https://opencart.abstracta.us/index.php?route=common/home");
+        searchPage.url("https://opencart.abstracta.us/index.php?route=common/home");
     }
 
     @Test

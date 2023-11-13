@@ -23,13 +23,13 @@ public class BasePage {
     }
 
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
         driver.manage().window().maximize();
     }
 
     public void url(String url) throws InterruptedException {
         driver.get(url);
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
     }
 
 
