@@ -72,44 +72,9 @@ public class RegisterTest {
         }
     }
 
+
+
     /*
-    @Test
-    @Tag("Registro")
-    @Tag("ALL")
-    public void RegistroFallidoTodosTest() throws InterruptedException {
-        ExtentTest test = extent.createTest("Prueba de registro fallido - Todos los campos vacios");
-        test.log(Status.INFO, "Comienza el Test");
-        RegisterPage registerPage = new RegisterPage(driver, wait);
-
-        try {
-            registerPage.clickMiCuenta();
-            registerPage.clickRegistrar();
-            Assertions.assertEquals(registerPage.obtenerTituloRegistro(), "Account");
-            test.log(Status.PASS, "Ingreso a la página de Registro");
-
-            registerPage.clickRegistrarse();
-            test.log(Status.PASS, "Presiono el boton registrarse sin completar ningun campo");
-
-            Assertions.assertEquals(registerPage.obtenerMensajeNombreObligatorio(), "First Name must be between 1 and 32 characters!");
-            Assertions.assertEquals(registerPage.obtenerMensajeApellidoObligatorio(), "Last Name must be between 1 and 32 characters!");
-            Assertions.assertEquals(registerPage.obtenerMensajeCorreoObligatorio(), "E-Mail Address does not appear to be valid!");
-            Assertions.assertEquals(registerPage.obtenerMensajeTelefonoObligatorio(), "Telephone must be between 3 and 32 characters!");
-            Assertions.assertEquals(registerPage.obtenerMensajeContraseniaObligatorio(), "Password must be between 4 and 20 characters!");
-            //Assertions.assertEquals(registerPage.obtenerMensajeConfirmarContraseniaObligatorio(),"Password confirmation does not match password!");
-
-            Assertions.assertEquals(registerPage.obtenerMensajeAceptarPoliticas(),"Warning: You must agree to the Privacy Policy!");
-
-            test.log(Status.PASS, "Valido que en todos los campos se vean los requerimientos obligatorios");
-
-            registerPage.clickContinuarLogin();
-
-            test.log(Status.PASS, "Regreso a la página inicial");
-        } catch (AssertionError error) {
-            test.log(Status.FAIL, "Fallo la validación: " + error.getLocalizedMessage());
-            throw error;
-        }
-    }
-
     @Test
     @Tag("Registro")
     @Tag("ALL")
