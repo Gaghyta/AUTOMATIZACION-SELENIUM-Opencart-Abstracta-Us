@@ -16,25 +16,12 @@ public class RegisterPage extends BasePage{
     private By contrasenia = By.id("input-password");
     private By confirmacionDeContrasenia = By.id("input-confirm");
 
-    private By suscribirseOpcion = By.xpath("//*[@id=\"content\"]/form/fieldset[3]/div/div/label[2]/input");
-
-    /*private By nombreObligatorio = By.xpath("//*[@id=\"account\"]/div[2]/div/div");
-    private By apellidoObligatorio = By.xpath("//*[@id=\"account\"]/div[3]/div/div");
-    private By mailObligatorio = By.xpath("//*[@id=\"account\"]/div[4]/div/div");
-    private By telefonoObligatorio = By.xpath("//*[@id=\"account\"]/div[5]/div/div");
-    private By contraseniaObligatorio = By.xpath("//*[@id=\"content\"]/form/fieldset[2]/div[1]/div/div");*/
-    //private By confirmacionDeContraseniaObligatorio = By.xpath("//*[@id=\"content\"]/form/fieldset[2]/div[2]/div/div");
-
+   // private By suscribirseOpcion = By.xpath("//*[@id=\"content\"]/form/fieldset[3]/div/div/label[2]/input");
     private  By privacidadBotonAceptacion = By.xpath("//*[@id=\"content\"]/form/div/div/input[1]");
 
     private By continueBtn = By.className("btn-primary");
-    //private By continuarBoton = By.xpath("//*[@id=\"content\"]/form/div/div/input[2]");
-    //private By continuarBoton = By.className("buttons");
-    private By continuarBoton = By.xpath("//a[text()='Continue']");
 
-
-    //private By mailRepetido = By.className("alert-danger");
-    //private By privacidadNoAceptada = By.className("alert-dismissible");
+    //private By continuarBoton = By.xpath("//a[text()='Continue']");
 
     private By mensajeRegistroExitoso = By.xpath("//*[@id=\"content\"]/p[1]");
 
@@ -94,23 +81,15 @@ public class RegisterPage extends BasePage{
         sendText(clave, confirmacionDeContrasenia);
     }
 
-
     public void clickAceptarPoliticasPrivacidad () throws InterruptedException{
         Thread.sleep(1000);
         click(privacidadBotonAceptacion);
     }
 
-
     public void clickRegistrarse() throws InterruptedException {
         Thread.sleep(2000);
         click(continueBtn);
     }
-
-
-    /*public void clickContinuarLogin() throws InterruptedException {
-        Thread.sleep(2000);
-        click(continuarBoton);
-    }*/
 
 
     public String obtenerMensajeExito() throws InterruptedException {
@@ -119,60 +98,4 @@ public class RegisterPage extends BasePage{
         return this.getText(mensajeRegistroExitoso);
     }
 
-
-/*
-    public String obtenerMensajeConfirmarMail() throws InterruptedException {
-        System.out.println("Valido el mensaje de confirmar mail: " + getText(confirmarMail));
-        return this.getText(confirmarMail);
-    }
-
-    public String obtenerMensajeNombreObligatorio() throws InterruptedException {
-        Thread.sleep(1000);
-        System.out.println("Verificar Nombre: " + getText(nombreObligatorio));
-        return this.getText(nombreObligatorio);
-    }
-
-    public String obtenerMensajeApellidoObligatorio() throws InterruptedException {
-        Thread.sleep(1000);
-        System.out.println("Verificar Apellido: " + getText(apellidoObligatorio));
-        return this.getText(apellidoObligatorio);
-    }
-
-    public String obtenerMensajeCorreoObligatorio() throws InterruptedException {
-        Thread.sleep(1000);
-        System.out.println("Verificar Correo: " + getText(mailObligatorio));
-        return this.getText(mailObligatorio);
-    }
-
-    public String obtenerMensajeTelefonoObligatorio() throws InterruptedException {
-        Thread.sleep(1000);
-        System.out.println("Verificar Telefono: " + getText(telefonoObligatorio));
-        return this.getText(telefonoObligatorio);
-    }
-
-
-    public String obtenerMensajeContraseniaObligatorio() throws InterruptedException {
-        Thread.sleep(1000);
-        System.out.println("Verificar Contraseña: " + getText(contraseniaObligatorio));
-        return this.getText(contraseniaObligatorio);
-    }
-
-    public String obtenerMensajeConfirmarContraseniaObligatorio() throws InterruptedException {
-        System.out.println("Verificar Confirmación de Contraseña: " + getText(confirmacionDeContraseniaObligatorio));
-        return this.getText(confirmacionDeContraseniaObligatorio);
-    }
-
-
-    public String obtenerMensajeCorreoRepetido() throws InterruptedException {
-        Thread.sleep(1000);
-        System.out.println("Verificar el mensaje de correo repetido: " + getText(mailRepetido));
-        return this.getText(mailRepetido);
-    }
-
-    public String obtenerMensajeAceptarPoliticas() throws InterruptedException {
-        Thread.sleep(1000);
-        System.out.println("Verificar la aceptacion de las políticas de privacidad: " + getText(privacidadNoAceptada));
-        return this.getText(privacidadNoAceptada);
-
-    }*/
 }
