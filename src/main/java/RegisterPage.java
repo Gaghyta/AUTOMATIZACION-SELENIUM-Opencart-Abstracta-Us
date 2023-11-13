@@ -24,21 +24,6 @@ public class RegisterPage extends BasePage{
     private By mensajeRegistroExitoso = By.xpath("//*[@id=\"content\"]/p[1]");
 
 
-    //TODO
-    // private By subTitulo1 = By.xpath("//fieldset[normalize-space()='Your Personal Details']");
-
-    //TODO
-    // private By subTitulo2 = By.xpath("//fieldset[normalize-space()='Your Password']");
-
-    //TODO
-    // private By subTitulo3 = By.xpath("//fieldset[normalize-space()='Newsletter']");
-
-    //TODO
-    // private By boletinDeNoticias =
-
-    //TODO
-    // private By aceptarPoliticasDePrivacidad =
-
     public RegisterPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
