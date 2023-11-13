@@ -21,7 +21,6 @@ public class RegisterPage extends BasePage{
     private By continueBtn = By.className("btn-primary");
 
     //private By continuarBoton = By.xpath("//a[text()='Continue']");
-
     private By mensajeRegistroExitoso = By.xpath("//*[@id=\"content\"]/p[1]");
 
 
