@@ -34,49 +34,40 @@ public class RegisterPage extends BasePage{
     }
 
     public void escribirNombre(String name) throws InterruptedException {
-        Thread.sleep(1000);
         sendText(name, nombre);
     }
 
     public void escribirApellido(String lastName) throws InterruptedException {
-        Thread.sleep(1000);
         sendText(lastName, apellido);
     }
 
     public void escribirMail(String mail) throws InterruptedException {
-        Thread.sleep(1000);
         sendText(mail, email);
     }
 
     public void escribirTelefono(String telefono) throws InterruptedException {
-        Thread.sleep(1000);
         sendText(telefono, telephone);
     }
 
 
     public void escribirContrasenia(String clave) throws InterruptedException {
-        Thread.sleep(1000);
         sendText(clave, contrasenia);
     }
 
     public void escribirConfirmarContrasenia(String clave) throws InterruptedException {
-        Thread.sleep(1000);
         sendText(clave, confirmacionDeContrasenia);
     }
 
     public void clickAceptarPoliticasPrivacidad () throws InterruptedException{
-        Thread.sleep(1000);
         click(privacidadBotonAceptacion);
     }
 
     public void clickRegistrarse() throws InterruptedException {
-        Thread.sleep(2000);
         click(continueBtn);
     }
 
 
     public String obtenerMensajeExito() throws InterruptedException {
-        Thread.sleep(2000);
         System.out.println("RESULTADO DE LA BUSQUEDA: " + this.getText(mensajeRegistroExitoso));
         return this.getText(mensajeRegistroExitoso);
     }

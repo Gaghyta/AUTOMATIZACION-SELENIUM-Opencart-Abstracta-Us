@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 
 public class BasePage {
 
@@ -17,15 +19,17 @@ public class BasePage {
 
     public BasePage(WebDriver driver, WebDriverWait wait) {
         BasePage.driver = driver;
-        BasePage.wait = wait;
+        BasePage.wait = new WebDriverWait(driver, Duration.ofMillis(2000));
     }
 
     public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
         driver.manage().window().maximize();
     }
 
-    public void getUrl(String url) {
+    public void url(String url) throws InterruptedException {
         driver.get(url);
+        Thread.sleep(1000);
     }
 
 
@@ -39,6 +43,7 @@ public class BasePage {
     }
 
     protected void sendText(String imputText, By locator) throws InterruptedException {
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         this.elementFind(locator).clear();
         this.elementFind(locator).sendKeys(imputText);
     }
@@ -58,12 +63,10 @@ public class BasePage {
 
 
     public void clickMiCuenta() throws InterruptedException {
-        Thread.sleep(1000);
         this.click(miCuenta);
     }
 
     public void clickRegistrar() throws InterruptedException {
-        Thread.sleep(1000);
         this.click(menuRegistro);
     }
 

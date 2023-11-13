@@ -15,24 +15,18 @@ public class SearchPage extends BasePage {
     }
 
     public void ingresarProductoABuscar(String texto) throws InterruptedException {
-        Thread.sleep(1000);
         sendText(texto,inputResultadosBuscador);
     }
 
 
     public void enviarProductoABuscar() throws InterruptedException {
-        Thread.sleep(2000);
         click(botonResultadosBuscador);
-
     }
 
     public void clickAgregarAlCarrito() throws InterruptedException{
-        Thread.sleep(1000);
         click(botonAgregarAlCarrito);
-
     }
     public String obtenerMensajeDeConfirmacion() throws InterruptedException {
-        Thread.sleep(1000);
         System.out.println("RESULTADO DE LA BUSQUEDA: " + this.getText(mensajeDeConfirmacion));
         return this.getText(mensajeDeConfirmacion);
     }
